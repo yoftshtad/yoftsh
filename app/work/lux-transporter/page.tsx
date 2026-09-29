@@ -18,11 +18,11 @@ const detailImages = [
   
 ]
 
-const overview = `LUX-TRANSPORTER is a focused interface system for presenting culture, stories, and selected work with clarity. The design emphasizes content hierarchy and editorial rhythm over decorative flourishes. It's built for organizations that publish long-form content, cultural programming, and archival work — where the interface should disappear and let the content speak.`
+const overview = `LuxTransporter is a luxury travel and transportation platform developed for a U.S.-based company offering premium ground transportation, private aviation, yacht charters, and personalized travel experiences. The website was designed to present these services through a refined digital experience that reflects the company's focus on luxury, discretion, personalization, and seamless service. `
 
-const challenge = `Cultural platforms often overwhelm users with dense content, competing navigation, and visual noise. The challenge was designing a system that feels spacious and editorial while handling diverse content types: articles, events, exhibitions, artist profiles, and archival materials. It needed to scale from a single story to a thousand without losing coherence.`
+const challenge = `The challenge was to build a digital presence that could communicate the scale and exclusivity of LuxTransporter's services without making the experience feel complicated or overly corporate. The platform needed to accommodate several distinct luxury services while maintaining a consistent brand experience and making it easy for potential clients to understand the offerings and begin a conversation or request a quote.`
 
-const solution = `We built LUX-TRANSPORTER around a modular content system with flexible grid layouts, strong typographic hierarchy, and subtle interaction patterns. A unified content block system handles all content types through composition rather than rigid templates. Reading modes adapt to content length. The result is a platform that elevates content while staying intuitive and performant — the interface genuinely disappears.`
+const solution = `We developed a polished, content-focused website that brings LuxTransporter's different services together under one cohesive experience. The design uses strong visual storytelling, clear service sections, structured information, and intuitive navigation to guide visitors through everything from luxury ground transportation to private air and yacht experiences. The result is a website that communicates the premium nature of the brand while keeping the experience clear, accessible, and conversion-focused.`
 
 const createObserver = (ref: React.RefObject<HTMLElement | null>, setVisible: (v: boolean) => void) => {
   const section = ref.current
@@ -67,7 +67,7 @@ export default function LuxTransporterPage() {
         <p className="text-[15px] font-medium leading-none tracking-[-0.04em] text-muted-foreground">{projectConfig.type}</p>
         <h1 className="mt-10 font-sans text-[clamp(2.5rem,5.5vw,4.5rem)] font-black leading-[0.82] tracking-[-0.105em]">{projectConfig.name}</h1>
         <p className="mt-10 max-w-[570px] text-[clamp(1.35rem,2.35vw,1.8rem)] font-semibold leading-[1.22] tracking-[-0.045em]">{projectConfig.description}</p>
-        <a href="/" className="mt-7 rounded-[2px] bg-primary px-4 py-2 text-[16px] font-semibold leading-none text-primary-foreground transition-transform hover:scale-105">Live Project</a>
+        <a href="https://www.luxtransporter.com/" className="mt-7 rounded-[2px] bg-primary px-4 py-2 text-[16px] font-semibold leading-none text-primary-foreground transition-transform hover:scale-105">Live Project</a>
         <div className="mt-[60px] aspect-[1.48] w-full overflow-hidden rounded-[9px] bg-muted">
           <img src={heroImage} alt={`${projectConfig.name} project placeholder`} className="h-full w-full object-cover" />
         </div>

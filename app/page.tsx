@@ -3,6 +3,19 @@
 import { useEffect, useRef, useState, forwardRef } from 'react'
 import { CursorImageTrail } from '@/components/cursor-image-trail'
 import { ProjectCard } from '@/components/project-card'
+import {
+  FigmaIcon,
+  FramerIcon,
+  ReactIcon,
+  TailwindIcon,
+  SupabaseIcon,
+  NextjsIcon,
+  JavascriptIcon,
+  PostgresIcon,
+  KritaIcon,
+  PhotoshopIcon,
+  BehanceIcon,
+} from '@/components/brand-icons'
 import { projectConfig as luxTransporterConfig } from './work/lux-transporter/page'
 import { projectConfig as stJohnConfig } from './work/st-john/page'
 import { projectConfig as moodMosaicConfig } from './work/mood-mosaic/page'
@@ -263,7 +276,7 @@ export default function Page() {
           </p>
           <div className="relative z-0 mx-auto -mt-8 aspect-[0.75] w-[315px] overflow-hidden rounded-[9px] sm:-mt-9">
             <img
-              src="https://placehold.co/630x840/f0442e/171717?text=ABOUT+IMAGE"
+              src="/dude.jpeg"
               alt="About page portrait placeholder"
               className="h-full w-full object-cover"
             />
@@ -317,25 +330,59 @@ function CursorFollower() {
 
 const services = [
   {
-    title: 'Web Design',
-    description: 'Thoughtful, expressive websites designed around your goals, your audience and the details that make your brand memorable.',
+    title: 'Product Design',
+    description: 'I design thoughtful digital products from early concepts to polished interfaces, focusing on clear user flows, strong visual systems, and practical experiences.',
   },
   {
-    title: 'Framer Development',
-    description: 'Responsive Framer builds that bring polished layouts, fluid interactions and a clear visual system to life.',
+    title: 'UI/UX Design',
+    description: 'I create clean, intuitive interfaces for web and mobile products, balancing visual design with usability, interaction, and a clear user experience.',
   },
   {
-    title: 'Interaction Design',
-    description: 'Purposeful interactions that guide people through your experience and make every moment feel intuitive.',
+    title: 'Web Design & Development',
+    description: 'I design and develop modern, responsive websites that combine strong visual design with fast, functional, and reliable experiences.',
   },
   {
-    title: 'Creative Direction',
-    description: 'A focused creative point of view that connects strategy, visual language and digital execution.',
+    title: 'App Design & Development',
+    description: 'I design and build mobile applications with a focus on intuitive interactions, consistent interfaces, and experiences that feel natural to use.',
   },
+  {
+    title: 'Prototyping & Design Systems',
+    description: 'I turn ideas into interactive prototypes and scalable design systems that make products easier to test, refine, and develop consistently.',
+  },
+  
 ]
 
 const ContactSection = forwardRef<HTMLElement, { isVisible: boolean }>(
   ({ isVisible }, ref) => {
+    const [formState, setFormState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+
+    const handleSubmit = async (event: React.FormEvent) => {
+      event.preventDefault()
+      setFormState('loading')
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        })
+
+        if (response.ok) {
+          setFormState('success')
+          setFormData({ name: '', email: '', message: '' })
+        } else {
+          setFormState('error')
+        }
+      } catch {
+        setFormState('error')
+      }
+    }
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }))
+    }
+
     return (
       <section
         ref={ref}
@@ -365,22 +412,53 @@ const ContactSection = forwardRef<HTMLElement, { isVisible: boolean }>(
         </div>
       </div>
 
-      <form className="mx-auto mt-16 flex max-w-[530px] flex-col gap-7 rounded-[10px] bg-primary px-8 py-9 text-primary-foreground sm:px-8" onSubmit={(event) => event.preventDefault()}>
+      <form onSubmit={handleSubmit} className="mx-auto mt-16 flex max-w-[530px] flex-col gap-7 rounded-[10px] bg-primary px-8 py-9 text-primary-foreground sm:px-8">
         <label className="flex flex-col gap-3 text-left text-[14px] font-semibold">
           Name
-          <input type="text" placeholder="Your name" className="border-b border-primary-foreground/50 bg-transparent px-4 pb-3 text-[18px] font-normal outline-none placeholder:text-primary-foreground/80 focus:border-primary-foreground" />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            disabled={formState === 'loading'}
+            placeholder="Your name"
+            className="border-b border-primary-foreground/50 bg-transparent px-4 pb-3 text-[18px] font-normal outline-none placeholder:text-primary-foreground/80 focus:border-primary-foreground disabled:opacity-50"
+          />
         </label>
         <label className="flex flex-col gap-3 text-left text-[14px] font-semibold">
           Email
-          <input type="email" placeholder="Your email" className="border-b border-primary-foreground/50 bg-transparent px-4 pb-3 text-[18px] font-normal outline-none placeholder:text-primary-foreground/80 focus:border-primary-foreground" />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            disabled={formState === 'loading'}
+            placeholder="Your email"
+            className="border-b border-primary-foreground/50 bg-transparent px-4 pb-3 text-[18px] font-normal outline-none placeholder:text-primary-foreground/80 focus:border-primary-foreground disabled:opacity-50"
+          />
         </label>
         <label className="flex flex-col gap-3 text-left text-[14px] font-semibold">
           Message
-          <textarea placeholder="Tell me about your project..." rows={3} className="resize-y border-b border-primary-foreground/50 bg-transparent px-4 pb-3 text-[18px] font-normal outline-none placeholder:text-primary-foreground/80 focus:border-primary-foreground" />
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            disabled={formState === 'loading'}
+            placeholder="Tell me about your project..."
+            rows={3}
+            className="resize-y border-b border-primary-foreground/50 bg-transparent px-4 pb-3 text-[18px] font-normal outline-none placeholder:text-primary-foreground/80 focus:border-primary-foreground disabled:opacity-50"
+          />
         </label>
-        <button type="submit" className="w-fit rounded-[2px] bg-background px-4 py-2 text-[16px] font-semibold text-foreground transition-transform hover:scale-105">
-          Send Message
+        <button
+          type="submit"
+          disabled={formState === 'loading'}
+          className="w-fit rounded-[2px] bg-background px-4 py-2 text-[16px] font-semibold text-foreground transition-transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {formState === 'loading' ? 'Sending...' : formState === 'success' ? 'Sent!' : 'Send Message'}
         </button>
+        {formState === 'error' && (
+          <p className="text-red-500 text-sm text-center">Failed to send message. Please try again.</p>
+        )}
       </form>
 
     </section>
@@ -434,9 +512,24 @@ const ServicesSection = forwardRef<HTMLElement, { isVisible: boolean }>(
           <div className="client-logo-track flex w-max gap-5">
             {[0, 1].map((group) => (
               <div key={group} className="flex gap-5" aria-hidden={group === 1}>
-                {['◈', '◫', '◒', '◇', '≋', '◌', '◫', '◒', '◇', '≋'].map((logo, index) => (
-                  <div key={`${group}-${logo}-${index}`} className="flex size-[56px] shrink-0 items-center justify-center rounded-[5px] bg-primary text-[25px] font-bold text-primary-foreground">
-                    {logo}
+                {[
+                  FigmaIcon,
+                  FramerIcon,
+                  ReactIcon,
+                  TailwindIcon,
+                  SupabaseIcon,
+                  NextjsIcon,
+                  JavascriptIcon,
+                  PostgresIcon,
+                  KritaIcon,
+                  PhotoshopIcon,
+                  BehanceIcon,
+                ].map((Icon, index) => (
+                  <div
+                    key={`${group}-${Icon.displayName || Icon.name || index}`}
+                    className="flex size-[56px] shrink-0 items-center justify-center rounded-[5px] bg-primary text-primary-foreground"
+                  >
+                    <Icon size={28} aria-hidden="true" />
                   </div>
                 ))}
               </div>

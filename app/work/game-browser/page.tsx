@@ -8,24 +8,24 @@ export const projectConfig: ProjectConfig = {
   name: 'Game Browser',
   type: 'Figma design/Prototype',
   thumbnail: '/cod/thumbnail.png',
-  description: 'A focused interface system for presenting culture, stories and selected work with clarity.',
+  description: 'A mobile game discovery app for exploring and finding new games.',
 }
 
 const heroImage = '/cod/hero.png'
 const detailImages = [
-  '/cod/home.png',
-  '/cod/cod.png',
-  '/cod/game-library.png',
-  '/cod/settings-screen.png',
+  '/cod/mock1.png',
+  '/cod/mock2.png',
+  '/cod/mock3.png',
+  '/cod/last_mockup.png'
   
   
 ]
 
-const overview = `Game Browser is a focused interface system for presenting culture, stories, and selected work with clarity. The design emphasizes content hierarchy and editorial rhythm over decorative flourishes. It's built for organizations that publish long-form content, cultural programming, and archival work — where the interface should disappear and let the content speak.`
+const overview = `Game Browser is a mobile game discovery app designed for people who enjoy exploring new games and finding something worth playing. The app brings game discovery into one engaging experience, allowing users to browse different titles, explore game details, and discover games based on their interests.`
 
-const challenge = `Cultural platforms often overwhelm users with dense content, competing navigation, and visual noise. The challenge was designing a system that feels spacious and editorial while handling diverse content types: articles, events, exhibitions, artist profiles, and archival materials. It needed to scale from a single story to a thousand without losing coherence.`
+const challenge = `With thousands of games available across different platforms and genres, discovering a new game can quickly become overwhelming. Users often have to jump between different websites and platforms to compare games, look through screenshots, check information, and decide what is actually worth their time. The challenge was to create a browsing experience that makes discovering games feel simple, enjoyable, and visually engaging rather than like searching through a database.`
 
-const solution = `We built Game Browser around a modular content system with flexible grid layouts, strong typographic hierarchy, and subtle interaction patterns. A unified content block system handles all content types through composition rather than rigid templates. Reading modes adapt to content length. The result is a platform that elevates content while staying intuitive and performant — the interface genuinely disappears.`
+const solution = `I designed a mobile-first experience centered around visual discovery and effortless browsing. Games are presented through a structured interface that makes important information easy to find while still giving the experience a strong visual identity. Clear navigation, organized categories, game previews, and detailed game pages allow users to move naturally from discovering a title to learning more about it, creating a smoother and more enjoyable way to explore games.`
 
 const createObserver = (ref: React.RefObject<HTMLElement | null>, setVisible: (v: boolean) => void) => {
   const section = ref.current
@@ -70,7 +70,7 @@ export default function GameBrowserPage() {
         <p className="text-[15px] font-medium leading-none tracking-[-0.04em] text-muted-foreground">{projectConfig.type}</p>
         <h1 className="mt-10 font-sans text-[clamp(2.5rem,5.5vw,4.5rem)] font-black leading-[0.82] tracking-[-0.105em]">{projectConfig.name}</h1>
         <p className="mt-10 max-w-[570px] text-[clamp(1.35rem,2.35vw,1.8rem)] font-semibold leading-[1.22] tracking-[-0.045em]">{projectConfig.description}</p>
-        <a href="/" className="mt-7 rounded-[2px] bg-primary px-4 py-2 text-[16px] font-semibold leading-none text-primary-foreground transition-transform hover:scale-105">Live Project</a>
+        <a href="https://www.figma.com/proto/nZoqqtVm85uTI9hoyzIiRB/Mobile-game-browser?node-id=4081-1340&t=tM5rcSkDvIfZrn2K-1" className="mt-7 rounded-[2px] bg-primary px-4 py-2 text-[16px] font-semibold leading-none text-primary-foreground transition-transform hover:scale-105">Live Project</a>
         <div className="mt-[60px] aspect-[1.48] w-full overflow-hidden rounded-[9px] bg-muted">
           <img src={heroImage} alt={`${projectConfig.name} project placeholder`} className="h-full w-full object-cover" />
         </div>

@@ -6,10 +6,10 @@ import { projectConfig as luxTransporterConfig } from './lux-transporter/page'
 import { projectConfig as stJohnConfig } from './st-john/page'
 import { projectConfig as moodMosaicConfig } from './mood-mosaic/page'
 import { projectConfig as noirStudioConfig } from './noir-studio/page'
-import { projectConfig as northFieldConfig } from './north-field/page'
 import { projectConfig as gameBrowserConfig} from './game-browser/page'
+import { projectConfig as cadenceConfig} from './cadence/page'
 
-const projects = [luxTransporterConfig, stJohnConfig, moodMosaicConfig, noirStudioConfig, northFieldConfig, gameBrowserConfig ]
+const projects = [luxTransporterConfig, stJohnConfig, moodMosaicConfig, noirStudioConfig, cadenceConfig, gameBrowserConfig ]
 
 const rows = [
   projects.slice(0, 2),
@@ -17,7 +17,7 @@ const rows = [
   projects.slice(4),
 ]
 
-const filters = ['All', 'Creative Direction', 'Interaction Design', 'Framer Development', 'Web Design']
+const filters = ['Figma Design', 'Creative Direction', 'Interaction Design', 'Framer Development', 'Web Design']
 
 const createObserver = (ref: React.RefObject<HTMLElement | null>, setVisible: (v: boolean) => void) => {
   const section = ref.current
@@ -71,7 +71,11 @@ export default function WorkPage() {
             <button
               key={filter}
               type="button"
-              className={`rounded-[2px] px-4 py-2 text-[16px] font-medium leading-none transition-colors ${index === 0 ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground'}`}
+              className={`rounded-[2px] px-4 py-2 text-[16px] font-medium leading-none ${
+                index === 0
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-primary text-primary-foreground'
+              }`}
             >
               {filter}
             </button>

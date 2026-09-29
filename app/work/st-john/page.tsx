@@ -13,18 +13,17 @@ export const projectConfig: ProjectConfig = {
 
 const heroImage = '/st-john/hero.png'
 const detailImages = [
-  '/st-john/detail-01.png',
-  '/st-john/detail-02.png',
-  '/st-john/detail-03.png',
-  '/st-john/detail-04.png',
-  '/st-john/detail-05.png',
+  '/st-john/stmock1.png',
+  '/st-john/stmock2.png',
+  '/st-john/stmock3.png',
+  
 ]
 
-const overview = `YUMIKO was created as an intimate digital showcase for boutique studios. The design pairs warm editorial typography with seamless gallery experiences, focusing on strong project imagery and flexible sections that make it easy to showcase selected work with elegance. Every detail was considered to feel both personal and professional.`
+const overview = `A WordPress website developed for St. John the Baptist & Abune Aregawi Tigray Orthodox Tewahdo Church in Portland, Oregon. The website serves as a digital home for the church, bringing together information about its history, faith, worship, events, community, membership, and ways to support the church.`
 
-const challenge = `Boutique studio portfolios often struggle to balance editorial warmth with functional gallery systems. Most templates feel either too cold and rigid, or too loose and unstructured. The challenge was creating something that feels handcrafted yet systematic, expressive yet usable.`
+const challenge = `The church needed a clear and accessible online presence that could serve both its existing parish community and people looking to learn more about the church. The website needed to communicate its Orthodox Tewahdo identity and traditions while making practical information—such as upcoming events, worship, membership, and support—easy to find.`
 
-const solution = `We built YUMIKO around a modular component system with reusable project components, clear visual hierarchy, and responsive layouts. The typography system uses warm editorial scales, while the gallery components handle varying aspect ratios gracefully. The result is a lightweight portfolio template that adapts easily to different types of work while keeping the experience refined, consistent, and easy to navigate.`
+const solution = `We developed the website in WordPress with a structured experience centered around the church's community and mission. Dedicated sections for the church's history, mission, events, worship, membership, and support make the information easy to navigate, while integrated event and donation functionality helps the church keep its community connected and engaged. The site also provides a foundation that can be maintained and updated as the church's activities and needs evolve.`
 
 const createObserver = (ref: React.RefObject<HTMLElement | null>, setVisible: (v: boolean) => void) => {
   const section = ref.current
@@ -69,7 +68,7 @@ export default function YumikoPage() {
         <p className="text-[15px] font-medium leading-none tracking-[-0.04em] text-muted-foreground">{projectConfig.type}</p>
         <h1 className="mt-10 font-sans text-[clamp(2.5rem,5.5vw,4.5rem)] font-black leading-[0.82] tracking-[-0.105em]">{projectConfig.name}</h1>
         <p className="mt-10 max-w-[570px] text-[clamp(1.35rem,2.35vw,1.8rem)] font-semibold leading-[1.22] tracking-[-0.045em]">{projectConfig.description}</p>
-        <a href="/" className="mt-7 rounded-[2px] bg-primary px-4 py-2 text-[16px] font-semibold leading-none text-primary-foreground transition-transform hover:scale-105">Live Project</a>
+        <a href="https://debrekidusanpdx.com/" className="mt-7 rounded-[2px] bg-primary px-4 py-2 text-[16px] font-semibold leading-none text-primary-foreground transition-transform hover:scale-105">Live Project</a>
         <div className="mt-[60px] aspect-[1.48] w-full overflow-hidden rounded-[9px] bg-muted">
           <img src={heroImage} alt={`${projectConfig.name} project placeholder`} className="h-full w-full object-cover" />
         </div>

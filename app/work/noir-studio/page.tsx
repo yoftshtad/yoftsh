@@ -18,11 +18,11 @@ const detailImages = [
   
 ]
 
-const overview = `NOIR STUDIO is a focused interface system for presenting culture, stories, and selected work with clarity. The design emphasizes content hierarchy and editorial rhythm over decorative flourishes. It's built for organizations that publish long-form content, cultural programming, and archival work — where the interface should disappear and let the content speak.`
+const overview = `Noir is a movie and series streaming platform concept designed around a cinematic, immersive viewing experience. The interface combines a dark visual language with rich imagery, smooth navigation, and carefully structured content to make browsing for something to watch feel engaging rather than overwhelming.`
 
-const challenge = `Cultural platforms often overwhelm users with dense content, competing navigation, and visual noise. The challenge was designing a system that feels spacious and editorial while handling diverse content types: articles, events, exhibitions, artist profiles, and archival materials. It needed to scale from a single story to a thousand without losing coherence.`
+const challenge = `Streaming platforms contain an enormous amount of content, which can make discovering something interesting difficult. At the same time, many interfaces prioritize the amount of information on screen over the actual cinematic experience. The challenge was to design a platform that could organize movies and series clearly while maintaining a strong visual identity that feels appropriate for entertainment.`
 
-const solution = `We built NOIR STUDIO around a modular content system with flexible grid layouts, strong typographic hierarchy, and subtle interaction patterns. A unified content block system handles all content types through composition rather than rigid templates. Reading modes adapt to content length. The result is a platform that elevates content while staying intuitive and performant — the interface genuinely disappears.`
+const solution = `I designed Noir around a dark, cinematic interface that puts the content itself at the center of the experience. Large artwork, visual hierarchy, focused content sections, and intuitive navigation make it easy to explore movies and series without cluttering the screen. The design also uses atmospheric elements and subtle visual details to create a more immersive experience while keeping the interface practical and easy to navigate.`
 
 const createObserver = (ref: React.RefObject<HTMLElement | null>, setVisible: (v: boolean) => void) => {
   const section = ref.current

@@ -13,8 +13,11 @@ type TrailImage = {
 }
 
 const heroImages = [
-  '/hero-images/cod.png',
   '/hero-images/Noir.png',
+  '/hero-images/Mood-mosaic.png',
+  '/hero-images/lux.png',
+  '/hero-images/st.png',
+  '/hero-images/cadence.png',
 ]
 
 export function CursorImageTrail() {
