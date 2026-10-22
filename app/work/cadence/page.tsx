@@ -13,10 +13,9 @@ export const projectConfig: ProjectConfig = {
 
 const heroImage = '/cadence/cadence_ai.png'
 const detailImages = [
-  '/cadence/home.png',
-  '/cadence/cadence.png',
-  '/cadence/game-library.png',
-  '/cadence/settings-screen.png',
+  '/cadence/mobile.png',
+  '/cadence/smart_watch.png',
+
   
   
 ]

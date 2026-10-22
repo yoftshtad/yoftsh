@@ -18,10 +18,10 @@ import {
 } from '@/components/brand-icons'
 import { projectConfig as luxTransporterConfig } from './work/lux-transporter/page'
 import { projectConfig as stJohnConfig } from './work/st-john/page'
-import { projectConfig as moodMosaicConfig } from './work/mood-mosaic/page'
 import { projectConfig as noirStudioConfig } from './work/noir-studio/page'
+import {projectConfig as iqsConfig} from './work/iqs/page'
 
-const homeProjects = [luxTransporterConfig, stJohnConfig, moodMosaicConfig, noirStudioConfig]
+const homeProjects = [luxTransporterConfig, stJohnConfig, iqsConfig, noirStudioConfig]
 
 const homeFirstRow = homeProjects.slice(0, 2)
 const homeSecondRow = homeProjects.slice(2, 4)

@@ -8,8 +8,9 @@ import { projectConfig as moodMosaicConfig } from './mood-mosaic/page'
 import { projectConfig as noirStudioConfig } from './noir-studio/page'
 import { projectConfig as gameBrowserConfig} from './game-browser/page'
 import { projectConfig as cadenceConfig} from './cadence/page'
+import { projectConfig as iqsConfig} from './iqs/page'
 
-const projects = [luxTransporterConfig, stJohnConfig, moodMosaicConfig, noirStudioConfig, cadenceConfig, gameBrowserConfig ]
+const projects = [luxTransporterConfig, stJohnConfig, iqsConfig, moodMosaicConfig, noirStudioConfig, cadenceConfig, gameBrowserConfig]
 
 const rows = [
   projects.slice(0, 2),
