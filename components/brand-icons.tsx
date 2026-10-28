@@ -353,3 +353,28 @@ export const BehanceIcon = createIcon(
     />
   </>
 )
+
+export const TelegramIcon = createIcon(
+  <>
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M4 8l8 4-8 4"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12 12l-4-4"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+  </>
+)

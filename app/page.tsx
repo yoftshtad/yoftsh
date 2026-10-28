@@ -3,19 +3,7 @@
 import { useEffect, useRef, useState, forwardRef } from 'react'
 import { CursorImageTrail } from '@/components/cursor-image-trail'
 import { ProjectCard } from '@/components/project-card'
-import {
-  FigmaIcon,
-  FramerIcon,
-  ReactIcon,
-  TailwindIcon,
-  SupabaseIcon,
-  NextjsIcon,
-  JavascriptIcon,
-  PostgresIcon,
-  KritaIcon,
-  PhotoshopIcon,
-  BehanceIcon,
-} from '@/components/brand-icons'
+import { TelegramIcon } from '@/components/brand-icons'
 import { projectConfig as luxTransporterConfig } from './work/lux-transporter/page'
 import { projectConfig as stJohnConfig } from './work/st-john/page'
 import { projectConfig as noirStudioConfig } from './work/noir-studio/page'
@@ -190,7 +178,7 @@ export default function Page() {
   return (
     <>
       <CursorFollower />
-      <main className="min-h-screen bg-background text-foreground">
+      <main className="min-h-screen bg-white text-black">
       <section data-hero-trail className="relative flex w-full flex-col items-center overflow-hidden px-6 pt-16 text-center sm:pt-[68px] lg:pt-[65px] min-h-[60vh] pb-0">
         <CursorImageTrail />
         <div className="relative z-10 flex w-full flex-col items-center scale-80 origin-top">
@@ -228,7 +216,7 @@ export default function Page() {
         </div>
 
         <a
-          href="/"
+          href="/#contact-title"
           className="mt-8 inline-flex items-center justify-center rounded-[2px] bg-primary px-4 py-2 text-[16px] font-medium leading-none text-primary-foreground transition-transform hover:scale-105"
         >
           Let&apos;s Talk
@@ -403,7 +391,7 @@ const ContactSection = forwardRef<HTMLElement, { isVisible: boolean }>(
             { label: 'X', name: 'X' },
             { label: '◎', name: 'Instagram' },
             { label: 'in', name: 'LinkedIn' },
-            { label: '●', name: 'GitHub' },
+            { label: <TelegramIcon size={19} />, name: 'Telegram' },
           ].map((social) => (
             <a key={social.name} href="/" aria-label={social.name} className="flex size-9 items-center justify-center rounded-[5px] bg-primary text-[19px] font-bold text-primary-foreground transition-transform hover:scale-105">
               {social.label}
@@ -504,39 +492,6 @@ const ServicesSection = forwardRef<HTMLElement, { isVisible: boolean }>(
         })}
       </div>
 
-      <div className="entrance-content mt-16" aria-labelledby="clients-title">
-        <h2 id="clients-title" className="mb-5 text-[24px] font-bold tracking-[-0.05em] text-muted-foreground">
-          Clients
-        </h2>
-        <div className="client-logo-mask overflow-hidden">
-          <div className="client-logo-track flex w-max gap-5">
-            {[0, 1].map((group) => (
-              <div key={group} className="flex gap-5" aria-hidden={group === 1}>
-                {[
-                  FigmaIcon,
-                  FramerIcon,
-                  ReactIcon,
-                  TailwindIcon,
-                  SupabaseIcon,
-                  NextjsIcon,
-                  JavascriptIcon,
-                  PostgresIcon,
-                  KritaIcon,
-                  PhotoshopIcon,
-                  BehanceIcon,
-                ].map((Icon, index) => (
-                  <div
-                    key={`${group}-${Icon.displayName || Icon.name || index}`}
-                    className="flex size-[56px] shrink-0 items-center justify-center rounded-[5px] bg-primary text-primary-foreground"
-                  >
-                    <Icon size={28} aria-hidden="true" />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   )
 })

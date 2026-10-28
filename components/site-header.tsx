@@ -92,7 +92,7 @@ export function SiteHeader() {
       </nav>
 
       <button
-        className="md:hidden p-2 -mr-2"
+        className="md:hidden p-2 -mr-2 relative z-50"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-expanded={isMobileMenuOpen}
         aria-controls="mobile-menu"
@@ -114,8 +114,8 @@ export function SiteHeader() {
 
       <div
         id="mobile-menu"
-        className={`md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-sm flex flex-col items-center justify-center gap-8 transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`md:hidden fixed top-0 left-0 z-40 h-auto w-[280px] bg-white/95 backdrop-blur-sm flex flex-col items-start gap-8 px-8 pt-16 pb-12 border-r border-foreground/10 transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="navigation"
         aria-label="Mobile navigation"
@@ -125,7 +125,7 @@ export function SiteHeader() {
             key={item.label}
             href={item.href}
             onClick={() => handleLinkClick(item.href)}
-            className="text-[24px] font-medium tracking-[-0.02em] transition-opacity hover:opacity-60"
+            className="text-[20px] font-medium tracking-[-0.02em] text-foreground transition-opacity hover:opacity-60"
           >
             {item.label}
           </Link>

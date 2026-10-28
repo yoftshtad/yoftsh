@@ -70,7 +70,7 @@ export default function GameBrowserPage() {
         <p className="text-[15px] font-medium leading-none tracking-[-0.04em] text-muted-foreground">{projectConfig.type}</p>
         <h1 className="mt-10 font-sans text-[clamp(2.5rem,5.5vw,4.5rem)] font-black leading-[0.82] tracking-[-0.105em]">{projectConfig.name}</h1>
         <p className="mt-10 max-w-[570px] text-[clamp(1.35rem,2.35vw,1.8rem)] font-semibold leading-[1.22] tracking-[-0.045em]">{projectConfig.description}</p>
-        <a href="https://www.figma.com/proto/nZoqqtVm85uTI9hoyzIiRB/Mobile-game-browser?node-id=4081-1340&t=tM5rcSkDvIfZrn2K-1" className="mt-7 rounded-[2px] bg-primary px-4 py-2 text-[16px] font-semibold leading-none text-primary-foreground transition-transform hover:scale-105">Live Project</a>
+        <a href="https://www.figma.com/proto/nZoqqtVm85uTI9hoyzIiRB/Mobile-game-browser?node-id=4048-4&p=f&t=s306UZRRQCkmWqyO-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4009%3A4" target="_blank" rel="noopener noreferrer" className="mt-7 rounded-[2px] bg-primary px-4 py-2 text-[16px] font-semibold leading-none text-primary-foreground transition-transform hover:scale-105">Live Project</a>
         <div className="mt-[60px] aspect-[1.48] w-full overflow-hidden rounded-[9px] bg-muted">
           <img src={heroImage} alt={`${projectConfig.name} project placeholder`} className="h-full w-full object-cover" />
         </div>
